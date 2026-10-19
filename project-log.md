@@ -1,5 +1,17 @@
 # 项目会话日志
 
+## 2026-10-19 — 修复 Typora 直连与系统 DNS 回退
+<!-- project-log-id: shadow-20261019-typora-dns -->
+
+- 状态：已验证完成并推送到远程仓库。
+- 范围：Shadowrocket.conf、project-log.md。
+- 任务背景：用户排查 Typora 2 官网（v2.typora.io）打不开的问题，发现漏网之鱼走代理超时，且内网环境下外部公共 DNS 被封禁导致 DIRECT 解析死锁。
+- 线上资源：[GitHub 仓库](https://github.com/Bapexboz/shadowrocket-config)。
+- 实际完成：`Shadowrocket.conf` 中配置 `fallback-dns-server = system`；为 `typora.io` 添加 `DOMAIN-SUFFIX,typora.io,DIRECT` 规则，并在 `[Host]` 与 `always-real-ip` 中绑定系统 DNS 解析；同步 LinkedIn 规则。
+- 决策与口径：内网环境直连域名优先走系统内网 DNS 解析，绕过公共 DNS 阻断；客户端手动生效后远端仓库同步保持一致。
+- 本地产物：Shadowrocket.conf。
+- 待确认 / 下一步：无。
+
 ## 2026-10-14 — 更新住宅节点分组与 TypeSafe 分流
 <!-- project-log-id: shadow-20261014-routing -->
 
