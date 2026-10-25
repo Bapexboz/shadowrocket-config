@@ -1,5 +1,17 @@
 # 项目会话日志
 
+## 2026-10-25 — ChinaMax 与 AI 窄补丁
+<!-- project-log-id: shadow-20261025-chinamax-ai -->
+
+- 状态：配置已改，待推送到远程并在客户端更新验证。
+- 范围：Shadowrocket.conf、project-log.md。
+- 任务背景：对照社区分流方案，补强国内域名覆盖，并为 AI 策略组叠加 Claude / Gemini / BardAI 窄规则集。
+- 线上资源：[GitHub 仓库](https://github.com/Bapexboz/shadowrocket-config)。
+- 实际完成：`China.list` 替换为 `ChinaMax.list`；在 LingJingMaster `AI.list` 后追加 blackmatrix7 的 Claude、Gemini、BardAI；保留个人域名与 GEOIP,CN。
+- 决策与口径：不采用整包 bm7 OpenAI.list，避免 auth0/intercom 等宽匹配；Google 规则暂不迁移。
+- 本地产物：Shadowrocket.conf。
+- 待确认 / 下一步：Shadowrocket 更新远程配置后，抽查国内站直连与 Claude/Gemini 出口。
+
 ## 2026-10-19 — 修复 Typora 直连与系统 DNS 回退
 <!-- project-log-id: shadow-20261019-typora-dns -->
 
